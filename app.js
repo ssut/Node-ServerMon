@@ -37,14 +37,13 @@ try {
 include(__dirname + '/function.js');
 include(__dirname + '/php.js');
 
-var com = spawn('dstat', ['-c', '-d', '-n', '-f', '--nocolor']); // CPU, DISK, NETWORK AND FULL-LOG
+var com = spawn('dstat', ['-c', '-d', '-n', '-m', '-f', '--nocolor']); // CPU, DISK, NETWORK AND FULL-LOG
 var headerGroup = [];
 var subGroup = [];
 
 com.stdout.on('data', function(data) {
 	var content = new Buffer(data).toString('utf8', 0, data.length);
 	var contentn = content.split('\n');
-	
 	var result = {};
 	
 	if(headerGroup.length == 0) {
