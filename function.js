@@ -9,7 +9,7 @@ nameFilter.text = nameFilter.prototype = function(text) {
 };
 
 nameFilter.regex = nameFilter.prototype = function(text) {
-	var regex = /-([a-zA-Z0-9-_\/]+)-/;
+	var regex = /-?([a-zA-Z0-9-_\/]+)-?/;
 	
 	if(text.match(regex) == null)
 		return null;
