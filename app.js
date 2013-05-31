@@ -1,3 +1,5 @@
+"use strict";
+
 var fs = require('fs'),
 	vm = require('vm'),
 	io = require('socket.io'),
@@ -31,7 +33,7 @@ try {
 	logger.info('Socket.io server running (port ' + argv.port + ')');
 } catch (Exception) {
 	logger.info('Cannot start Socket.io server. The port(' + argv.port + ') has been opened another application.');
-	process.exit();
+	process.exit(-1);
 };
 
 include(__dirname + '/function.js');
